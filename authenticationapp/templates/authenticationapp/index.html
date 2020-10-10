@@ -1,0 +1,22 @@
+{% extends 'authenticationapp/base.html' %}
+
+
+{% block content %}
+<h1>Authentication</h1>
+{% if user.is_authenticated %}
+<h1>{{ user.username }}さんがログイン中です</h1>
+<a href="{% url 'authenticationapp:logout' %}">ログアウト</a>
+{% else %}
+<h1>メインメニュー</h1>
+<p>メニューと言いつつログインする他選択肢は無い</p>
+<div class="row">
+    <div class="col-md-6">
+        <a class="btn btn-danger btn-block" href="{% url 'social:begin' 'google-oauth2' %}">Googleでログイン</a>
+        <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-primary btn-block">Facebookでログイン</a>
+    </div>
+</div>
+
+
+{% endif %}
+
+{% endblock content %}

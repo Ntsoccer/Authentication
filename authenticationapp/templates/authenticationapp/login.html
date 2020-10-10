@@ -1,0 +1,12 @@
+{% extends 'authenticationapp/base.html' %}
+
+
+{% block content %}
+<h2>ソーシャルサービスを選択してログイン</h2>
+
+<a href="{% url 'social:begin' 'google-oauth2' %}">Googleでログイン</a>
+
+
+<a href="{% url 'authenticationapp:index' %}">戻る</a>
+
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'authenticationapp/base.html' %}
+
+
+{% block content %}
+<h1>Log Out</h1>
+<p>
+    ログアウトしました。<br>
+    再度ログインする場合は<a href="{% url 'authenticationapp:index' %}">コチラ</a>から実施してください。
+</p>
+
+{% endblock content %}
